@@ -109,23 +109,23 @@ export default function CreateNewTask(){
     <SafeAreaProvider>
       <SafeAreaView style = {{ flex: 1, backgroundColor: 'rgb(114, 166, 168)'}}>
 
-        <Animated.View entering={SlideInDown.duration(250)}>
+        <View style = {styles.Window}>
 
-          <View style = {styles.Window}>
+          <View style = {styles.NavBar}>
+            <Text style = {styles.NavBarText}> ON IT! </Text> 
+          </View>
 
-            <View style = {styles.NavBar}>
-              <Text style = {styles.NavBarText}> ON IT! </Text> 
-            </View>
+          <View style = {styles.NavBarLine} />
 
-            <View style = {styles.NavBarLine} />
+          <View style = {styles.BackButtonView}>
 
-            <View style = {styles.BackButtonView}>
+            <Pressable style = {styles.BackButton} onPress = {() => router.push('/HomePage')}>
+              <Icon name="arrow-back" size={24} color="#000" />
+            </Pressable>
 
-              <Pressable style = {styles.BackButton} onPress = {() => router.push('/HomePage')}>
-                <Icon name="arrow-back" size={24} color="#000" />
-              </Pressable>
+          </View>
 
-            </View>
+          <Animated.View style = {{ height:"100%", width: "100%" }} entering={SlideInDown.duration(250)}>
 
             <View style = {styles.MainBox}>
               <View style = {styles.FormContainer}>
@@ -210,9 +210,9 @@ export default function CreateNewTask(){
 
               </View>
             </View>
-          </View>
+          </Animated.View>
+        </View>
 
-        </Animated.View>
       </SafeAreaView>
     </SafeAreaProvider>
                                                                                                                                   

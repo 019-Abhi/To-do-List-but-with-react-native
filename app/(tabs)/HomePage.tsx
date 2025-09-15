@@ -84,15 +84,15 @@ export default function HomeScreen() {
     <SafeAreaProvider>
       <SafeAreaView style = {{ flex: 1, backgroundColor: 'rgb(114, 166, 168)' }}>
 
-        <Animated.View entering={SlideInDown.duration(250)}>
+        <View style = {styles.NavBar}>
+          <Text style = {styles.NavBarText}> On It! </Text>
+        </View>
 
-          <View style = {styles.Window}>
+        <View style = {styles.NavBarLine}/>
 
-            <View style = {styles.NavBar}>
-              <Text style = {styles.NavBarText}> On It! </Text>
-            </View>
+        <View style = {styles.Window}>
 
-            <View style = {styles.NavBarLine}/>
+          <Animated.View style = {{ height: "90%", width: "100%" }} entering={SlideInDown.duration(250)}>
 
             <View style = {styles.MainBox}>
 
@@ -109,10 +109,9 @@ export default function HomeScreen() {
               </View>       
               
             </View>
+          </Animated.View>
+        </View>
 
-          </View>
-
-        </Animated.View>
       </SafeAreaView>
     </SafeAreaProvider>
     
@@ -144,7 +143,7 @@ const styles = StyleSheet.create({
   
   NavBar: {
 
-    height: '20%',  
+    height: '10%',  
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
@@ -173,7 +172,7 @@ const styles = StyleSheet.create({
 
   AddNewView: {
 
-    position: 'fixed',    
+    position: 'absolute',    
     bottom: 15,              
     right: 55,
     width: 70,               
